@@ -28,7 +28,7 @@ public class GraficoCompuesto implements Grafico {
 
     @Override
     public boolean mover(int x, int y) throws Exception {
-        for (int i=0; i< listaGraficos.size() ; i++) {
+/*        for (int i=0; i< listaGraficos.size() ; i++) {
 
             if (listaGraficos.get(i) instanceof Circulo) {
                 Circulo circulo = (Circulo) listaGraficos.get(i);
@@ -41,8 +41,12 @@ public class GraficoCompuesto implements Grafico {
                 punto.mover(x, y);
             }
 
+        }*/
+        boolean dentroPantalla = true;
+        for(Grafico grafico : listaGraficos) {
+            if (!grafico.mover(x, y)) {dentroPantalla=false;}
         }
-        return true;
+        return dentroPantalla;
     }
 
     @Override
