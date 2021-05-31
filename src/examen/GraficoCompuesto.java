@@ -52,7 +52,7 @@ public class GraficoCompuesto implements Grafico {
     @Override
     public String dibujar() {
         String resultado ="";
-        for (int i=0; i< listaGraficos.size() ; i++) {
+/*        for (int i=0; i< listaGraficos.size() ; i++) {
 
             if (listaGraficos.get(i) instanceof Circulo) {
                 Circulo circulo = (Circulo) listaGraficos.get(i);
@@ -65,6 +65,9 @@ public class GraficoCompuesto implements Grafico {
                 resultado += punto.dibujar();
             }
 
+        }*/
+        for(Grafico grafico : listaGraficos) {
+            resultado += grafico.dibujar() + "\n";
         }
         return resultado;
     }

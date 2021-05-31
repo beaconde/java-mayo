@@ -14,7 +14,7 @@ public class Punto implements Grafico {
         return x;
     }
 
-    public void setX(int x) throws Exception {
+    public void setX(int x) throws MyException {
         if (x<=800) {
             this.x = x;
         } else throw new MyException(1);
@@ -30,12 +30,16 @@ public class Punto implements Grafico {
         } else throw new MyException(2);
     }
 
-    public boolean mover(int x, int y) throws Exception {
-        if(this.x + x <= 800 && this.y + y <= 600) {
+    public boolean mover(int x, int y) {
+//        if(this.x + x <= 800 && this.y + y <= 600) {
+        try {
             setX(this.x + x);
             setY(this.y + y);
             return true;
-        } else return false;
+//        } else return false;
+        } catch(MyException e) {
+            return false;
+        }
     }
 
     public String dibujar() {

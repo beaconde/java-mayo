@@ -9,10 +9,10 @@ public class Circulo extends Punto {
         setRadio(radio);
     }
 
-    @Override
+/*    @Override
     public boolean mover(int x, int y) throws Exception {
         return super.mover(x, y);
-    }
+    }*/
 
     @Override
     public String dibujar() {
